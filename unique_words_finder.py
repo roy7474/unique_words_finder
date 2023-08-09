@@ -12,15 +12,18 @@ Write a program to open the file romeo.txt and read it line by line.
    in the list of unique words. If the word is not in the list of 
    unique words, add it to the list. When the program completes, 
    sort and print the list of unique words in alphabetical order.”
-
 '''
-counts = dict()
-file_name = input('Enter the name of the file: ')
-fhandle = open(file_name)
-for line in fhandle:
-    word = line.split()
-    if word not in counts:
-        counts[word] = 1
-    else:
-        counts[word] = counts[word] + 1
-    print(counts)
+
+fname = input("Enter file name: ")      #ask user for file name
+fh = open(fname)
+lst = list()                            #make a list
+
+for line in fh:
+    word_split = line.split()
+    for word in word_split:
+        if word not in lst:
+            lst.append(word)
+        else:
+            continue
+
+print(sorted(lst))
