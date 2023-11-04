@@ -20,10 +20,10 @@ lst = list()                            #make a list
 
 for line in fh:
     word_split = line.split()
-    for word in word_split:
-        if word not in lst:
+    for word in word_split:             
+        if word not in lst:             # if the word is not in the list, add to the list
             lst.append(word)
-        else:
+        else:                           # otherwise, continue
             continue
 
-print(sorted(lst))
+print(sorted(lst))                      #print list
